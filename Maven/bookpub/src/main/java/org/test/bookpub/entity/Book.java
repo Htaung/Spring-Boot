@@ -21,13 +21,13 @@ public class Book {
 	@ManyToOne
 	private Publisher publisher;
 	@ManyToMany
-	private List<Reviewer> reviewer;
+	private List<Reviewer> reviewers;
 
 	protected Book() {
 	}
 
 	public Book(Long id, String isbn, String title, String description, Author author, Publisher publisher,
-			List<Reviewer> reviewer) {
+			List<Reviewer> reviewers) {
 		super();
 		this.id = id;
 		this.isbn = isbn;
@@ -35,7 +35,14 @@ public class Book {
 		this.description = description;
 		this.author = author;
 		this.publisher = publisher;
-		this.reviewer = reviewer;
+		this.reviewers = reviewers;
+	}
+
+	public Book(String isbn, String title, Author author, Publisher publisher) {
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
 	}
 
 	public Long getId() {
@@ -86,4 +93,13 @@ public class Book {
 		this.publisher = publisher;
 	}
 
+	public List<Reviewer> getReviewers() {
+		return reviewers;
+	}
+
+	public void setReviewers(List<Reviewer> reviewers) {
+		this.reviewers = reviewers;
+	}
+
+	
 }
