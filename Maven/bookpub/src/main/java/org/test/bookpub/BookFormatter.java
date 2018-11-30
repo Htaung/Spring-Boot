@@ -13,7 +13,7 @@ public class BookFormatter implements Formatter<Book> {
 	public BookFormatter(BookRepository repository) {
 		this.repository = repository;
 	}
-
+	
 	@Override
 	public Book parse(String bookIdentifier, Locale locale) throws ParseException {
 		Book book = repository.findBookByIsbn(bookIdentifier);

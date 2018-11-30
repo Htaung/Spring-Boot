@@ -31,11 +31,11 @@ public class StartupRunner implements CommandLineRunner {
 	@Autowired
 	private PublisherRepository publisherRepository;
 
-	@Scheduled(initialDelay = 1000, fixedRate = 10000)
-	public void run() {
-
-		logger.info("Number	of	books:	" + bookRepository.count());
-	}
+//	@Scheduled(initialDelay = 1000, fixedRate = 10000)
+//	public void run() {
+//
+//		//logger.info("Number	of	books:	" + bookRepository.count());
+//	}
 
 	@Override
 	public void run(String... arg0) throws Exception {

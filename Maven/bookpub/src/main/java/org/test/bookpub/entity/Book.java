@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Book {
 	@Id
@@ -20,7 +22,9 @@ public class Book {
 	private Author author;
 	@ManyToOne
 	private Publisher publisher;
+	
 	@ManyToMany
+	@JsonIgnore
 	private List<Reviewer> reviewers;
 
 	protected Book() {
