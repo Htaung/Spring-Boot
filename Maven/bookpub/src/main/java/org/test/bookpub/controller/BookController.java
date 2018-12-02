@@ -36,6 +36,11 @@ public class BookController {
 		return book.getReviewers();
 	}
 
+//	@RequestMapping(value = "/session", method = RequestMethod.GET)
+//	public String getSessionId(HttpServletRequest request) {
+//		return request.getSession().getId();
+//	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.registerCustomEditor(Isbn.class, new IsbnEditor());
